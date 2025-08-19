@@ -116,7 +116,8 @@ class UserController extends Controller
 
         $baseRules = [
             'name' => 'sometimes|required|string|max:100',
-            'email' => ['sometimes', 'required', 'string', 'email|max:255', Rule::unique('users')->ignore($user->id)],
+            // Memisahkan email dan max dari sebelumnya ['email|max:255'] menjadi ['email', 'max:255']
+            'email' => ['sometimes', 'required', 'string', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
         ];
 
         $extraRules = [];
