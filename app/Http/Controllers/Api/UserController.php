@@ -66,6 +66,9 @@ class UserController extends Controller
                 'birth_date'    => 'required|date',
                 'start_date'    => 'required|date',
                 'end_date'      => 'required|date',
+                /* Ubah value di intern_type jadi null, untuk bisa disesuaikan jenis magang dari Front-End
+                Value nilai intern_type g usah di tentukan dari server. */
+                // 'intern_type'   => 'required|string|max:50', --> contoh referensi, sesuaikan sendiri 
                 'intern_type'   => 'required|in:SMK,College,General',
                 'supervisor_id' => 'required|exists:supervisors,id',
             ];
@@ -148,6 +151,9 @@ class UserController extends Controller
                 'birth_date'    => 'sometimes|required|date',
                 'start_date'    => 'sometimes|required|date',
                 'end_date'      => 'sometimes|required|date',
+                /* Ubah value di intern_type jadi null, untuk bisa disesuaikan jenis magang dari Front-End
+                Value nilai intern_type g usah di tentukan dari server. */
+                // 'intern_type'   => 'required|string|max:50', --> contoh referensi, sesuaikan sendiri
                 'intern_type'   => 'sometimes|required|in:SMK,College,General',
                 'supervisor_id' => 'sometimes|required|exists:supervisors,id',
             ];
